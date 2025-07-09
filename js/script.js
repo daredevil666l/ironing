@@ -907,6 +907,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 // Поддержка для старых браузеров без scroll-behavior
 if (!('scrollBehavior' in document.documentElement.style)) {
     // Полифил для плавного скролла

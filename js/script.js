@@ -915,3 +915,184 @@ if (!('scrollBehavior' in document.documentElement.style)) {
 }
 
 
+
+
+// Simplified Page Loader
+class SimplePageLoader {
+    constructor() {
+        this.loaderScreen = document.getElementById('loaderScreen');
+        this.progressFill = document.getElementById('progressFill');
+        this.progressPercent = document.getElementById('progressPercent');
+        
+        this.totalResources = 0;
+        this.loadedResources = 0;
+        this.minLoadTime = 1500; // Минимальное время показа
+        this.startTime = Date.now();
+        
+        this.init();
+    }
+    
+    init() {
+        this.showLoader();
+        this.countResources();
+        this.startLoading();
+        this.bindEvents();
+    }
+    
+    showLoader() {
+        this.loaderScreen.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    hideLoader() {
+        const elapsedTime = Date.now() - this.startTime;
+        const remainingTime = Math.max(0, this.minLoadTime - elapsedTime);
+        
+        setTimeout(() => {
+            this.loaderScreen.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            // Удаляем элемент из DOM после анимации
+            setTimeout(() => {
+                if (this.loaderScreen.parentNode) {
+                    this.loaderScreen.parentNode.removeChild(this.loaderScreen);
+                }
+            }, 600);
+        }, remainingTime);
+    }
+    
+    countResources() {
+        // Считаем все ресурсы на странице
+        const images = document.querySelectorAll('img');
+        const videos = document.querySelectorAll('video');
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        const scripts = document.querySelectorAll('script[src]');
+        
+        this.totalResources = images.length + videos.length + links.length + scripts.length + 3;
+    }
+    
+    startLoading() {
+        this.trackResources();
+        this.simulateProgress();
+    }
+    
+    simulateProgress() {
+        // Плавная анимация прогресса для лучшего UX
+        let progress = 0;
+        const animate = () => {
+            progress += Math.random() * 3;
+            
+            if (progress < 90) {
+                this.updateProgress(Math.min(progress, 90));
+                setTimeout(animate, 100 + Math.random() * 200);
+            }
+        };
+        
+        animate();
+    }
+    
+    trackResources() {
+        // Отслеживаем загрузку изображений
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            if (img.complete) {
+                this.onResourceLoaded();
+            } else {
+                img.addEventListener('load', () => this.onResourceLoaded());
+                img.addEventListener('error', () => this.onResourceLoaded());
+            }
+        });
+        
+        // Отслеживаем загрузку видео
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            if (video.readyState >= 3) {
+                this.onResourceLoaded();
+            } else {
+                video.addEventListener('canplaythrough', () => this.onResourceLoaded());
+                video.addEventListener('error', () => this.onResourceLoaded());
+            }
+        });
+        
+        // Отслеживаем загрузку CSS
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        links.forEach(link => {
+            if (link.sheet) {
+                this.onResourceLoaded();
+            } else {
+                link.addEventListener('load', () => this.onResourceLoaded());
+                link.addEventListener('error', () => this.onResourceLoaded());
+            }
+        });
+        
+        // Отслеживаем загрузку скриптов
+        const scripts = document.querySelectorAll('script[src]');
+        scripts.forEach(script => {
+            script.addEventListener('load', () => this.onResourceLoaded());
+            script.addEventListener('error', () => this.onResourceLoaded());
+        });
+        
+        // Проверяем готовность страницы
+        if (document.readyState === 'complete') {
+            setTimeout(() => this.finalizeLoading(), 500);
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(() => this.finalizeLoading(), 500);
+            });
+        }
+    }
+    
+    onResourceLoaded() {
+        this.loadedResources++;
+        const realProgress = Math.min(95, (this.loadedResources / this.totalResources) * 100);
+        
+        // Обновляем прогресс только если он больше текущего
+        const currentProgress = parseInt(this.progressPercent.textContent);
+        if (realProgress > currentProgress) {
+            this.updateProgress(realProgress);
+        }
+    }
+    
+    finalizeLoading() {
+        // Завершаем загрузку на 100%
+        this.updateProgress(100);
+        
+        setTimeout(() => {
+            this.hideLoader();
+        }, 300);
+    }
+    
+    updateProgress(percent) {
+        const roundedPercent = Math.round(percent);
+        this.progressPercent.textContent = roundedPercent + '%';
+        this.progressFill.style.width = percent + '%';
+    }
+    
+    bindEvents() {
+        // Обработка ошибок загрузки
+        window.addEventListener('error', (e) => {
+            this.onResourceLoaded(); // Считаем как загруженный
+        });
+        
+        // Клавиша Escape для принудительного скрытия (для отладки)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.loaderScreen.classList.contains('hidden')) {
+                this.hideLoader();
+            }
+        });
+    }
+}
+
+// Инициализация загрузчика
+document.addEventListener('DOMContentLoaded', function() {
+    window.pageLoader = new SimplePageLoader();
+});
+
+// Таймаут безопасности
+setTimeout(() => {
+    const loader = document.getElementById('loaderScreen');
+    if (loader && !loader.classList.contains('hidden')) {
+        loader.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}, 8000);

@@ -15,6 +15,44 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Simplified Loader Screen -->
+    <div class="loader-screen" id="loaderScreen">
+      <div class="loader-background">
+        <div class="loader-gradient"></div>
+      </div>
+
+      <div class="loader-content">
+        <div class="loader-logo">
+          <div class="loader-icon">
+            <div class="iron-animation">
+              <div class="iron-base"></div>
+              <div class="iron-handle"></div>
+              <div class="steam-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+            </div>
+          </div>
+          <div class="loader-text">
+            <h1 class="loader-title">Поглажу</h1>
+            <p class="loader-subtitle">Загружаем для вас лучший сервис</p>
+          </div>
+        </div>
+
+        <div class="loader-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-percent">
+            <span id="progressPercent">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <header class="header">
       <div class="container">
         <div class="header__content">
@@ -22,7 +60,7 @@
           <div class="header__logo">
             <div class="logo-icon">
               <!-- Здесь будет ваш логотип -->
-              <img src="/img/iron.png" alt="logo" class="logo-icon" />
+              <img src="img/iron.png" alt="logo" class="logo-icon" />
             </div>
             <div class="logo-text">
               <h1 class="logo-title">Поглажу</h1>
@@ -82,13 +120,13 @@
     </header>
 
     <!-- JavaScript для мобильного меню -->
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero__background">
         <video class="hero__video" autoplay muted loop playsinline>
-          <source src="/video/ironing.mp4" type="video/mp4" />
+          <source src="video/ironing.mp4" type="video/mp4" />
           <!-- <source src="video/ironing-background.webm" type="video/webm" /> -->
           <!-- Фоновое изображение как fallback -->
           <!-- <img src="images/ironing-hero-bg.jpg" alt="Профессиональная глажка" /> -->
@@ -504,7 +542,7 @@
                   <!-- <div class="heart-icon">
                     <div class="heart-shape"></div>
                   </div> -->
-                  <img class="heart-icon" src="../img/heart.png" />
+                  <img class="heart-icon" src="img/heart.png" />
                 </div>
                 <div class="mission-text">
                   <h3 class="mission-title">Наша миссия</h3>

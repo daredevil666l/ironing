@@ -4686,3 +4686,390 @@ html {
 }
 
 
+
+/* Loader Screen */
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loader-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Loader Background */
+.loader-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.loader-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f0f8ff 25%,
+        #e6f3ff 50%,
+        #ddefff 75%,
+        #c9e4ff 100%
+    );
+    position: relative;
+    animation: gradientShift 4s ease-in-out infinite;
+}
+
+.loader-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(45, 212, 218, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(74, 144, 226, 0.08) 0%, transparent 50%);
+    animation: backgroundPulse 3s ease-in-out infinite alternate;
+}
+
+/* Loader Content */
+.loader-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 16px 64px rgba(0, 0, 0, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.6);
+    padding: 48px 40px;
+    max-width: 380px;
+    width: 90%;
+    animation: contentFloat 3s ease-in-out infinite;
+}
+
+/* Loader Logo */
+.loader-logo {
+    margin-bottom: 40px;
+}
+
+.loader-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    position: relative;
+}
+
+/* Iron Animation */
+.iron-animation {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    animation: ironFloat 2s ease-in-out infinite;
+}
+
+.iron-base {
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px 8px 20px 20px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    box-shadow: 0 4px 16px rgba(45, 212, 218, 0.4);
+    animation: ironGlow 2s ease-in-out infinite alternate;
+}
+
+.iron-handle {
+    width: 24px;
+    height: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    top: 4px;
+    left: 28px;
+    box-shadow: 0 2px 8px rgba(45, 212, 218, 0.3);
+}
+
+/* Steam Particles */
+.steam-particles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: steamRise 1.5s ease-out infinite;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.3s;
+}
+
+.particle:nth-child(3) {
+    left: 50%;
+    animation-delay: 0.6s;
+}
+
+.particle:nth-child(4) {
+    left: 70%;
+    animation-delay: 0.9s;
+}
+
+.particle:nth-child(5) {
+    left: 90%;
+    animation-delay: 1.2s;
+}
+
+/* Loader Text */
+.loader-title {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--text-primary), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 2s ease-in-out infinite;
+}
+
+.loader-subtitle {
+    font-family: var(--font-nav);
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    animation: subtitleFade 2s ease-in-out infinite alternate;
+}
+
+/* Progress Bar */
+.loader-progress {
+    margin-bottom: 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+.progress-percent {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes backgroundPulse {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes contentFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes ironFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(2deg);
+    }
+}
+
+@keyframes ironGlow {
+    0% {
+        box-shadow: 0 4px 16px rgba(45, 212, 218, 0.4);
+    }
+    100% {
+        box-shadow: 0 6px 24px rgba(45, 212, 218, 0.6);
+    }
+}
+
+@keyframes steamRise {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes textShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes subtitleFade {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .loader-content {
+        padding: 32px 24px;
+        max-width: 320px;
+    }
+    
+    .loader-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .iron-animation {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .iron-base {
+        width: 45px;
+        height: 30px;
+        top: 15px;
+        left: 7px;
+    }
+    
+    .iron-handle {
+        width: 18px;
+        height: 12px;
+        top: 3px;
+        left: 21px;
+    }
+    
+    .loader-title {
+        font-size: 24px;
+    }
+    
+    .loader-subtitle {
+        font-size: 12px;
+    }
+    
+    .progress-bar {
+        height: 6px;
+        margin-bottom: 12px;
+    }
+    
+    .progress-percent {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-content {
+        padding: 24px 20px;
+        max-width: 280px;
+    }
+    
+    .loader-title {
+        font-size: 20px;
+    }
+    
+    .progress-bar {
+        height: 5px;
+        margin-bottom: 10px;
+    }
+}

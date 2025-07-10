@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="theme-color" content="#2DD4DA">
+    <title>Личный кабинет - Поглажу</title>
+    <link rel="stylesheet" href="css/cabinet.css">
+</head>
+<body>
+    <!-- Loader экран -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-background">
+            <div class="loader-gradient"></div>
+        </div>
+        <div class="loader-content">
+            <div class="loader-icon">
+                <div class="iron-loader">
+                    <div class="iron-body"></div>
+                    <div class="iron-handle"></div>
+                    <div class="steam">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="loader-title">Поглажу</h2>
+            <p class="loader-text">Проверяем авторизацию...</p>
+        </div>
+    </div>
+
+    <!-- Overlay для модальных окон -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Модальное окно ввода телефона -->
+    <div class="auth-modal" id="phoneModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Войдите в личный кабинет</h2>
+                <p class="modal-subtitle">Введите номер телефона для получения SMS-кода</p>
+            </div>
+            
+            <div class="modal-body">
+                <form class="auth-form" id="phoneForm">
+                    <div class="input-group">
+                        <label class="input-label">Номер телефона</label>
+                        <div class="phone-wrapper">
+                            <span class="phone-prefix">+7</span>
+                            <input 
+                                type="tel" 
+                                class="form-input" 
+                                id="phoneInput"
+                                placeholder="(999) 123-45-67"
+                                maxlength="15"
+                            >
+                        </div>
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="sendSmsBtn">
+                        <span class="btn-text">Получить код</span>
+                        <div class="btn-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно ввода SMS-кода -->
+    <div class="auth-modal" id="smsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Введите код из SMS</h2>
+                <p class="modal-subtitle">
+                    Код отправлен на номер <span id="phoneDisplay"></span>
+                </p>
+            </div>
+            
+            <div class="modal-body">
+                <form class="auth-form" id="smsForm">
+                    <div class="input-group">
+                        <label class="input-label">4-значный код</label>
+                        <div class="sms-inputs">
+                            <input type="text" class="sms-digit" maxlength="1" data-index="0">
+                            <input type="text" class="sms-digit" maxlength="1" data-index="1">
+                            <input type="text" class="sms-digit" maxlength="1" data-index="2">
+                            <input type="text" class="sms-digit" maxlength="1" data-index="3">
+                        </div>
+                        <div class="error-message" id="smsError"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="verifySmsBtn">
+                        <span class="btn-text">Войти</span>
+                        <div class="btn-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+                
+                <div class="modal-footer">
+                    <button class="link-btn" id="resendBtn">Отправить код повторно</button>
+                    <button class="link-btn" id="changePhoneBtn">Изменить номер</button>
+                    
+                    <div class="timer-info">
+                        <span>Повторная отправка через: </span>
+                        <span class="timer" id="timer">60</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент личного кабинета -->
+    <div class="cabinet-wrapper" id="cabinetContent" style="display: none;">
+        <!-- Шапка кабинета -->
+        <header class="cabinet-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <div class="logo-icon">
+                            <div class="iron-icon"></div>
+                        </div>
+                        <div class="logo-text">
+                            <h1>Личный кабинет</h1>
+                            <span>Поглажу</span>
+                        </div>
+                    </div>
+                    
+                    <div class="user-section">
+                        <div class="user-info">
+                            <span class="user-phone" id="userPhone"></span>
+                            <span class="user-status">Клиент</span>
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <span>Выйти</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main class="cabinet-main">
+            <div class="container">
+                <!-- Статистика пользователя -->
+                <section class="stats-section">
+                    <div class="stats-card">
+                        <h2 class="section-title">Ваша статистика</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">15</div>
+                                <div class="stat-label">Заказов выполнено</div>
+                                <div class="stat-icon">📦</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">3,250₽</div>
+                                <div class="stat-label">Потрачено всего</div>
+                                <div class="stat-icon">💰</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">425</div>
+                                <div class="stat-label">Бонусных баллов</div>
+                                <div class="stat-icon">⭐</div>
+                            </div>
+                            <!-- <div class="stat-item">
+                                <div class="stat-number">5★</div>
+                                <div class="stat-label">Средний рейтинг</div>
+                                <div class="stat-icon">🏆</div>
+                            </div> -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Быстрые действия -->
+                <section class="actions-section">
+                    <div class="actions-card">
+                        <h2 class="section-title">Быстрые действия</h2>
+                        <div class="actions-grid">
+                            <button class="action-btn">
+                                <div class="action-icon">🧺</div>
+                                <div class="action-content">
+                                    <h3>Новый заказ</h3>
+                                    <p>Рассчитать стоимость и оформить заказ</p>
+                                </div>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon">📋</div>
+                                <div class="action-content">
+                                    <h3>История заказов</h3>
+                                    <p>Посмотреть все ваши заказы</p>
+                                </div>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon">💳</div>
+                                <div class="action-content">
+                                    <h3>Бонусы</h3>
+                                    <p>Управление бонусными баллами</p>
+                                </div>
+                            </button>
+                            <button class="action-btn">
+                                <div class="action-icon">📞</div>
+                                <div class="action-content">
+                                    <h3>Поддержка</h3>
+                                    <p>Связаться с нами</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Последние заказы -->
+                <section class="orders-section">
+                    <div class="orders-card">
+                        <h2 class="section-title">Последние заказы</h2>
+                        <div class="orders-list">
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-number">#1247</div>
+                                    <div class="order-date">15 декабря 2024</div>
+                                    <div class="order-items">Рубашки (3 шт), Брюки (2 шт)</div>
+                                </div>
+                                <div class="order-status status-completed">Выполнен</div>
+                                <div class="order-price">1,250₽</div>
+                            </div>
+                            
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-number">#1246</div>
+                                    <div class="order-date">12 декабря 2024</div>
+                                    <div class="order-items">Постельное белье, Полотенца</div>
+                                </div>
+                                <div class="order-status status-in-progress">В работе</div>
+                                <div class="order-price">890₽</div>
+                            </div>
+                            
+                            <div class="order-item">
+                                <div class="order-info">
+                                    <div class="order-number">#1245</div>
+                                    <div class="order-date">8 декабря 2024</div>
+                                    <div class="order-items">Костюм, Галстук</div>
+                                </div>
+                                <div class="order-status status-completed">Выполнен</div>
+                                <div class="order-price">1,100₽</div>
+                            </div>
+                        </div>
+                        
+                        <button class="show-all-btn">Показать все заказы</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/cabinet.js"></script>
+</body>
+</html>

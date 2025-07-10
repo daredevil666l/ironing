@@ -754,8 +754,8 @@ body {
     }
     
     .modal-content {
-        width: 95%;
-        max-width: 350px;
+        /* width: 95%; */
+        max-width: 321px;
     }
     
     .sms-inputs {

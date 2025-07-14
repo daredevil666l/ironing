@@ -24,7 +24,7 @@
       <div class="loader-content">
         <div class="loader-logo">
           <div class="loader-icon">
-            <div class="iron-animation">
+            <!-- <div class="iron-animation">
               <div class="iron-base"></div>
               <div class="iron-handle"></div>
               <div class="steam-particles">
@@ -34,6 +34,13 @@
                 <div class="particle"></div>
                 <div class="particle"></div>
               </div>
+            </div> -->
+            <div class="logo-image">
+              <img
+                src="img/ironingLogo.png"
+                alt="Логотип компании Поглажу"
+                class="logo-img"
+              />
             </div>
           </div>
           <div class="loader-text">
@@ -58,12 +65,14 @@
         <div class="header__content">
           <!-- Логотип -->
           <div class="header__logo">
-            <div class="logo-icon">
-              <!-- Здесь будет ваш логотип -->
-              <img src="img/iron.png" alt="logo" class="logo-icon" />
+            <div class="logo-image">
+              <img
+                src="img/ironingLogo.png"
+                alt="Логотип компании Поглажу"
+                class="logo-img"
+              />
             </div>
             <div class="logo-text">
-              <h1 class="logo-title">Поглажу</h1>
               <p class="logo-subtitle">Профессиональная глажка</p>
             </div>
           </div>
@@ -107,6 +116,19 @@
               <a href="tel:+74957411298" class="phone-link mobile-phone"
                 >+7 495 741-12-98</a
               >
+
+              <!-- Новая кнопка с адресом -->
+              <a
+                href="https://maps.yandex.ru/?text=м.Бабушкинская Коминтерна 15"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="text-decoration: none"
+              >
+                <button class="btn btn--location">
+                  <span class="btn-icon">📍</span>
+                  <span class="btn-text">м.Бабушкинская, Коминтерна 15</span>
+                </button>
+              </a>
             </div>
           </nav>
 
@@ -152,14 +174,13 @@
             </h1>
 
             <p class="hero__description">
-              Профессиональный, бережный уход за вещами. Строгий контроль
-              качества на собственном производстве с 2015 года
+              Профессиональный, бережный уход за вещами.
             </p>
 
             <div class="hero__stats">
               <div class="header-stat-item">
-                <div class="stat-number">2500+</div>
-                <div class="stat-label">Довольных клиентов</div>
+                <div class="stat-number">ДО 2 ч</div>
+                <div class="stat-label">Минимальный срок</div>
               </div>
               <div class="header-stat-item">
                 <div class="stat-number">24 ч</div>
@@ -203,8 +224,6 @@
           <div class="advantages__grid">
             <div class="advantage-card">
               <div class="advantage-card__icon">
-                <!-- Здесь будет реальная иконка -->
-
                 <div
                   class="icon-animated"
                   data-static="../img/delivery-scooter.png"
@@ -214,15 +233,14 @@
               <div class="advantage-card__content">
                 <h3 class="advantage-card__title">Приемка и доставка</h3>
                 <p class="advantage-card__description">
-                  7 дней в неделю у вас дома, в удобное для вас время с 07:00 до
-                  23:00
+                  7 дней в неделю с доставкой на дом и в приемном пункте в
+                  удобное для Вас время с 8:00-21:00
                 </p>
               </div>
             </div>
 
             <div class="advantage-card">
               <div class="advantage-card__icon">
-                <!-- Здесь будет реальная иконка -->
                 <div
                   class="icon-animated"
                   data-static="../img/verified.jpeg"
@@ -240,7 +258,6 @@
 
             <div class="advantage-card">
               <div class="advantage-card__icon">
-                <!-- Здесь будет реальная иконка -->
                 <div
                   class="icon-animated"
                   data-static="../img/price-tag.jpeg"
@@ -249,16 +266,12 @@
               </div>
               <div class="advantage-card__content">
                 <h3 class="advantage-card__title">Цены</h3>
-                <p class="advantage-card__description">
-                  Бесплатная доставка при заказе от 2 990 ₽. Готовность заказа
-                  через 48 часов
-                </p>
+                <p class="advantage-card__description">Заказ от 1090 рублей.</p>
               </div>
             </div>
 
             <div class="advantage-card">
               <div class="advantage-card__icon">
-                <!-- Здесь будет реальная иконка -->
                 <div
                   class="icon-animated"
                   data-static="../img/city.jpeg"
@@ -268,7 +281,7 @@
               <div class="advantage-card__content">
                 <h3 class="advantage-card__title">Приемный пункт</h3>
                 <p class="advantage-card__description">
-                  В пяти минутах от м. Дубровка, м. Автозаводская и м. Курская
+                  В 10 минутах от м.Бабушкинская, ул. Коминтерна 15
                 </p>
               </div>
             </div>
@@ -292,7 +305,7 @@
               </div>
               <div class="working-hours__info">
                 <h2 class="working-hours__title">Режим работы</h2>
-                <p class="working-hours__time">с 7:00 до 21:00</p>
+                <p class="working-hours__time">с 8:00 до 21:00</p>
               </div>
             </div>
             <p class="service-modes__subtitle">
@@ -425,7 +438,7 @@
 
           <div class="promotions__grid">
             <!-- Промокод для новых клиентов -->
-            <div class="promo-card promo-card--discount">
+            <!-- <div class="promo-card promo-card--discount">
               <div class="promo-card__icon">
                 <div class="gift-icon">
                   <div class="gift-box"></div>
@@ -437,6 +450,23 @@
                 <p class="promo-card__description">
                   на скидку для новых<br />
                   клиентов
+                </p>
+                <button class="promo-btn promo-btn--primary">
+                  <span class="promo-btn__text">Получить</span>
+                  <span class="promo-btn__arrow">→</span>
+                </button>
+              </div>
+            </div> -->
+            <!-- Фирменный мешок вместо промокода -->
+            <div class="promo-card promo-card--gift">
+              <div class="promo-card__icon">
+                <img src="img/shopping.png" alt="" class="bag-icon">
+              </div>
+              <div class="promo-card__content">
+                <h3 class="promo-card__title">Фирменный мешок</h3>
+                <p class="promo-card__description">
+                  для грязного и чистого белья<br />
+                  с логотипом компании
                 </p>
                 <button class="promo-btn promo-btn--primary">
                   <span class="promo-btn__text">Получить</span>
@@ -501,9 +531,9 @@
 
       <div class="container">
         <div class="about-company__content">
-          <div class="about-company__main">
+           <div class="about-company__main">
             <div class="about-company__story">
-              <div class="story-header">
+             <!-- <div class="story-header">
                 <span class="story-year">2015</span>
                 <h2 class="story-title">История компании "Поглажу"</h2>
               </div>
@@ -527,18 +557,12 @@
                 </div>
 
                 <div class="story-image">
-                  <div class="image-placeholder">
-                    <img
-                      src="img/ironingteam.webp"
-                      alt=""
-                      class="image-placeholder"
-                    />
-                    <!-- Здесь будет фотография основателей/команды -->
-                    <!-- <div class="placeholder-text">Фото команды</div> -->
+                  <div class="">
+                    <img src="img/ironingteam.webp" alt="" class="image-3d" />
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="about-company__mission">
               <div class="mission-visual">
@@ -634,11 +658,7 @@
                 <div class="">
                   <div class="photo-placeholder">
                     <!-- Здесь будет фото офиса/производства -->
-                    <img
-                      src="img/office.webp"
-                      alt="office"
-                      class="photo-placeholder"
-                    />
+                    <img src="img/office.webp" alt="office" class="image-3d" />
                     <!-- <div class="placeholder-text">Фото офиса</div> -->
                   </div>
                 </div>
@@ -878,7 +898,7 @@
                     <span class="btn-text">Оформить заказ</span>
                     <span class="btn-arrow">→</span>
                   </button>
-                  <button class="btn btn--outline btn--large" id="clearAllBtn">
+                  <button class="btn btn--large" id="clearAllBtn">
                     <span class="btn-text">Очистить</span>
                   </button>
                 </div>
@@ -895,6 +915,22 @@
                     >
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <!-- Блок предупреждения -->
+          <div class="calculator__warning">
+            <div class="warning-card">
+              <div class="warning-icon">
+                <span class="icon-warning">⚠️</span>
+              </div>
+              <div class="warning-content">
+                <h3 class="warning-title">Важная информация</h3>
+                <p class="warning-text">
+                  При наличии декоративной отделки, комбинации материалов,
+                  деликатных материалов и других факторов, усложняющих процесс
+                  глажки возможна наценка от 30% до 100%.
+                </p>
               </div>
             </div>
           </div>
@@ -980,9 +1016,7 @@
                   <div class="answer-content">
                     <p>
                       Конечно можете. Для вашего удобства работает наш приемный
-                      пункт. График работы пункта с 8-20 ежедневно. Адрес:
-                      м.Пролетарская / Волгоградский Проспект или Дубровка,
-                      ул.1-я Дубровская д.12
+                      пункт.
                     </p>
                   </div>
                 </div>
@@ -1175,11 +1209,16 @@
           <div class="footer__main">
             <div class="footer__company">
               <div class="footer__logo">
-                <div class="footer-logo-icon">
-                  <!-- Здесь будет ваш логотип -->
-                </div>
                 <div class="footer-logo-text">
-                  <h3 class="footer-logo-title">Поглажу</h3>
+                  <!-- <h3 class="footer-logo-title">Поглажу</h3> -->
+                  <div class="logo-image">
+                    <img
+                      src="img/ironingLogo.png"
+                      alt="Логотип компании Поглажу"
+                      class="logo-img"
+                    />
+                  </div>
+
                   <p class="footer-logo-subtitle">Профессиональная глажка</p>
                 </div>
               </div>

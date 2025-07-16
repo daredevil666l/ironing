@@ -524,7 +524,7 @@
     </section>
 
     <!-- About Company Section -->
-    <section class="about-company" id="about-company">
+    <!-- <section class="about-company" id="about-company">
       <div class="about-company__background">
         <div class="about-company__gradient"></div>
       </div>
@@ -533,7 +533,7 @@
         <div class="about-company__content">
           <div class="about-company__main">
             <div class="about-company__story">
-              <!-- <div class="story-header">
+              <div class="story-header">
                 <span class="story-year">2015</span>
                 <h2 class="story-title">История компании "Поглажу"</h2>
               </div>
@@ -562,14 +562,11 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
 
               <div class="about-company__mission">
                 <div class="mission-visual">
                   <div class="mission-icon">
-                    <!-- <div class="heart-icon">
-                    <div class="heart-shape"></div>
-                  </div> -->
                     <img class="heart-icon" src="img/heart.png" />
                   </div>
                   <div class="mission-text">
@@ -614,7 +611,6 @@
                 <div class="values-grid">
                   <div class="value-item">
                     <div class="value-icon">
-                      <!-- <div class="shield-icon"></div> -->
                       <img src="img/quality.png" alt="" class="value-icon" />
                     </div>
                     <div class="value-content">
@@ -631,7 +627,6 @@
                         alt=""
                         class="value-icon"
                       />
-                      <!-- <div class="clock-icon"></div> -->
                     </div>
                     <div class="value-content">
                       <h4 class="value-name">Пунктуальность</h4>
@@ -643,7 +638,6 @@
                   <div class="value-item">
                     <div class="value-icon">
                       <img src="img/protection.png" alt="" class="value-icon" />
-                      <!-- <div class="hands-icon"></div> -->
                     </div>
                     <div class="value-content">
                       <h4 class="value-name">Бережность</h4>
@@ -663,9 +657,6 @@
                   </p>
                 </div>
                 <div class="team-gallery">
-                  <!-- <div class="">
-                  <div class="photo-placeholder">
-                  </div> -->
                   <img src="img/office.webp" alt="office" class="image-3d" />
                 </div>
                 <div class="team-info">
@@ -689,7 +680,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Calculator Section -->
     <section class="calculator" id="calculator">
@@ -704,6 +695,35 @@
             <p class="calculator__subtitle">
               Рассчитайте точную стоимость глажки ваших вещей
             </p>
+          </div>
+
+          <!-- Переключатель режимов калькулятора -->
+          <div class="calculator__modes">
+            <div class="mode-switcher">
+              <div class="mode-switcher__background"></div>
+              <div class="mode-switcher__options">
+                <label
+                  class="mode-option mode-option--active"
+                  data-mode="detailed"
+                >
+                  <input
+                    type="radio"
+                    name="calculatorMode"
+                    value="detailed"
+                    checked
+                  />
+                  <!-- <span class="mode-option__icon">📝</span> -->
+                   <img src="img/sticky-note.png" alt="" class="mode-option__icon">
+                  <span class="mode-option__text">Сам укажу список вещей</span>
+                </label>
+                <label class="mode-option" data-mode="bulk">
+                  <input type="radio" name="calculatorMode" value="bulk" />
+                  <!-- <span class="mode-option__icon">⚖️</span> -->
+                   <img class="mode-option__icon" src="img/market.png" alt="">
+                  <span class="mode-option__text">У меня мешок вещей</span>
+                </label>
+              </div>
+            </div>
           </div>
 
           <div class="calculator__main">
@@ -862,6 +882,87 @@
               </div>
             </div>
 
+            <!-- Упрощенный режим "Мешок вещей" -->
+            <div
+              class="calculator__bulk-mode"
+              id="bulkMode"
+              style="display: none"
+            >
+              <div class="bulk-calculator">
+                <div class="bulk-input-section">
+                  <h3 class="section-title">Параметры заказа</h3>
+
+                  <div class="bulk-controls">
+                    <div class="weight-input">
+                      <label class="form-label">Общий вес (кг)</label>
+                      <div class="weight-input-wrapper">
+                        <input
+                          type="number"
+                          class="weight-input-field"
+                          id="bulkWeight"
+                          min="0.1"
+                          max="30"
+                          step="0.1"
+                          placeholder="Например: 5.5"
+                        />
+                        <span class="weight-unit">кг</span>
+                      </div>
+                    </div>
+
+                    <div class="tariff-display">
+  <label class="form-label">Применяемый тариф</label>
+  <div class="tariff-options">
+    <div class="tariff-option tariff-option--info" data-tariff="single">
+      <div class="tariff-option__content">
+        <div class="tariff-option__name">Неделька для одного</div>
+        <div class="tariff-option__price">1636.90 ₽/кг</div>
+        <div class="tariff-option__range">1-5 кг</div>
+      </div>
+    </div>
+    
+    <div class="tariff-option tariff-option--info" data-tariff="couple">
+      <div class="tariff-option__content">
+        <div class="tariff-option__name">Неделька для двоих</div>
+        <div class="tariff-option__price">1364.09 ₽/кг</div>
+        <div class="tariff-option__range">6-24 кг</div>
+      </div>
+    </div>
+    
+    <div class="tariff-option tariff-option--info" data-tariff="family">
+      <div class="tariff-option__content">
+        <div class="tariff-option__name">Неделька на всю семью</div>
+        <div class="tariff-option__price">1091.27 ₽/кг</div>
+        <div class="tariff-option__range">25+ кг</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tariff-note">
+    <span class="note-icon">ℹ️</span>
+    <span class="note-text">Тариф выбирается автоматически в зависимости от веса</span>
+  </div>
+</div>
+
+
+                    <div class="bulk-urgency">
+                      <label class="form-label">Срочность выполнения</label>
+                      <select class="custom-select" id="bulkUrgencySelect">
+                        <option value="standard">
+                          Стандартный (до 24 часов)
+                        </option>
+                        <option value="urgent">
+                          Срочный (+50%, до 12 часов)
+                        </option>
+                        <option value="express">
+                          Экспресс (+100%, до 2 часов)
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Блок расчета стоимости -->
             <div class="calculator__result">
               <div class="result-card">
@@ -870,18 +971,33 @@
                 </div>
 
                 <div class="result-details">
-                  <div class="detail-row">
+                  <div class="detail-row detail-row--weight">
                     <span class="detail-label">Общий вес:</span>
                     <span class="detail-value" id="totalWeight">0.0 кг</span>
                   </div>
+
                   <div class="detail-row">
                     <span class="detail-label">Тариф:</span>
-                    <span class="detail-value" id="tariffInfo">-</span>
+                    <div class="tariff-info">
+                      <span class="tariff-price" id="tariffPrice">-</span>
+                      <span class="tariff-description" id="tariffDescription"
+                        >-</span
+                      >
+                    </div>
+                    <!-- Fallback элемент для совместимости -->
+                    <span
+                      class="detail-value"
+                      id="tariffInfo"
+                      style="display: none"
+                      >-</span
+                    >
                   </div>
-                  <div class="detail-row">
+
+                  <div class="detail-row detail-row--base">
                     <span class="detail-label">Базовая стоимость:</span>
                     <span class="detail-value" id="basePrice">0 ₽</span>
                   </div>
+
                   <div
                     class="detail-row detail-row--accent"
                     id="urgencyRow"
@@ -911,8 +1027,7 @@
 
                 <div class="result-info">
                   <div class="info-item">
-                    <!-- <span class="info-icon">🚚</span> -->
-                    <span class="info-text">Бесплатная доставка от 2990₽</span>
+                    <span class="info-text">🚚 Доставка сервисом Яндекса</span>
                   </div>
                   <div class="info-item">
                     <span class="info-icon">⏰</span>
@@ -935,7 +1050,7 @@
                 <p class="warning-text">
                   При наличии декоративной отделки, комбинации материалов,
                   деликатных материалов и других факторов, усложняющих процесс
-                  глажки возможна наценка от 30% до 100%.
+                  глажки возможна наценка от 30%.
                 </p>
               </div>
             </div>
@@ -1250,7 +1365,7 @@
               </div>
               <div class="contact-item">
                 <span class="contact-label">Режим работы:</span>
-                <span class="contact-text">7:00 - 21:00</span>
+                <span class="contact-text">8:00 - 21:00</span>
               </div>
             </div>
 

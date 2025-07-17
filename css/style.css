@@ -686,7 +686,7 @@ body.menu-open {
   gap: 8px;
   padding: 8px 16px;
   background: rgba(218, 218, 45, 0.2);
-  border: 1px solid rgba(45, 212, 218, 0.3);
+  border: 1px solid rgba(149, 218, 45, 0.3);
   border-radius: 50px;
   font-size: 12px;
   font-weight: 500;
@@ -757,7 +757,7 @@ body.menu-open {
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 4px;
-  text-shadow: 0 0 8px rgba(45, 212, 218, 0.4);
+  text-shadow: 0 0 8px rgba(192, 218, 45, 0.4);
 }
 
 .stat-label {
@@ -1405,7 +1405,7 @@ body.menu-open {
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(45, 212, 218, 0.3), 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(195, 218, 45, 0.3), 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Статичное изображение по умолчанию */
@@ -1673,8 +1673,8 @@ body.menu-open {
 
 .service-card__badge {
   padding: 6px 12px;
-  background: rgba(45, 212, 218, 0.2);
-  border: 1px solid rgba(45, 212, 218, 0.3);
+  background: rgba(45, 218, 68, 0.2);
+  border: 1px solid rgba(45, 218, 80, 0.3);
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
@@ -3306,7 +3306,7 @@ body.menu-open {
   color: var(--text-primary);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid rgba(45, 212, 218, 0.2);
+  border-bottom: 2px solid rgba(204, 218, 45, 0.2);
   position: relative;
 }
 
@@ -3630,7 +3630,7 @@ body.menu-open {
   text-align: center;
   margin-bottom: 32px;
   padding-bottom: 20px;
-  border-bottom: 2px solid rgba(45, 212, 218, 0.2);
+  border-bottom: 2px solid rgba(206, 218, 45, 0.2);
 }
 
 .result-title {
@@ -3696,8 +3696,8 @@ body.menu-open {
 .result-total {
   padding: 20px 0;
   margin-bottom: 24px;
-  border-top: 2px solid rgba(45, 212, 218, 0.2);
-  border-bottom: 2px solid rgba(45, 212, 218, 0.2);
+  border-top: 2px solid rgba(152, 218, 45, 0.2);
+  border-bottom: 2px solid rgba(152, 218, 45, 0.2);
 }
 
 .total-row {
@@ -3746,7 +3746,7 @@ body.menu-open {
 
 .btn--outline:hover {
   background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(45, 212, 218, 0.4);
+  border-color: rgba(117, 218, 45, 0.4);
   color: var(--primary-color);
 }
 
@@ -4072,7 +4072,7 @@ body.menu-open {
   justify-content: center;
   flex-shrink: 0;
   position: relative;
-  box-shadow: 0 4px 12px rgba(45, 212, 218, 0.3);
+  box-shadow: 0 4px 12px rgba(169, 218, 45, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -4179,7 +4179,7 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(45, 212, 218, 0.4);
+  box-shadow: 0 8px 24px rgba(218, 209, 45, 0.4);
   position: relative;
   transition: all 0.4s ease;
 }
@@ -4208,7 +4208,7 @@ body.menu-open {
 
 .faq-contact-card:hover .support-icon {
   transform: scale(1.1);
-  box-shadow: 0 12px 32px rgba(45, 212, 218, 0.5);
+  box-shadow: 0 12px 32px rgba(178, 218, 45, 0.5);
 }
 
 .contact-card__title {

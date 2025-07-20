@@ -1058,9 +1058,9 @@ body.menu-open {
   margin-bottom: 50px; /* Уменьшен */
 }
 
-.advantages__title {
+/* .advantages__title {
   font-family: var(--font-primary);
-  font-size: 38px; /* Немного уменьшен */
+  font-size: 38px; 
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 14px;
@@ -1073,7 +1073,19 @@ body.menu-open {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+} */
+
+.advantages__title {
+  font-family: var(--font-primary);
+  font-size: 38px;
+  font-weight: 700;
+  color: #E1A30A; /* Графитово-желтый цвет */
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  /* Убираем все свойства градиента */
 }
+
+
 
 .advantages__subtitle {
   font-family: var(--font-nav);
@@ -1970,19 +1982,11 @@ body.menu-open {
 
 .promotions__title {
   font-family: var(--font-primary);
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 16px;
+  color: #E1A30A; /* Графитово-желтый цвет */
+  margin-bottom: 14px;
   letter-spacing: -0.02em;
-  background: linear-gradient(
-    135deg,
-    var(--text-primary),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .promotions__subtitle {

@@ -54,8 +54,8 @@ class IroningCalculator {
 
     // Исправленные тарифы без пересечений диапазонов
     this.pricingTiers = [
-      { min: 1, max: 5, price: 1700, name: "неделька для одного" },
-      { min: 6, max: 24, price: 1400, name: "неделька для двоих" },
+      { min: 1, max: 5, price: 1650, name: "неделька для одного" },
+      { min: 6, max: 24, price: 1350, name: "неделька для двоих" },
       { min: 25, max: 10000, price: 1100, name: "неделька на всю семью" },
     ];
 
@@ -190,8 +190,8 @@ class IroningCalculator {
 
     // Получаем тариф
     const tariffMap = {
-      single: { price: 1700, name: "неделька для одного" },
-      couple: { price: 1400, name: "неделька для двоих" },
+      single: { price: 1650, name: "неделька для одного" },
+      couple: { price: 1350, name: "неделька для двоих" },
       family: { price: 1100, name: "неделька на всю семью" },
     };
 

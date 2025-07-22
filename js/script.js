@@ -50,7 +50,7 @@ class IroningCalculator {
       weight: 0,
       tariff: "single",
       urgency: "standard",
-    };z
+    };
 
     // Исправленные тарифы без пересечений диапазонов
     this.pricingTiers = [

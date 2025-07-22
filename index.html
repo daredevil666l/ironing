@@ -44,8 +44,8 @@
             </div>
           </div>
           <div class="loader-text">
-            <h1 class="loader-title">Поглажу</h1>
-            <p class="loader-subtitle">Загружаем для вас лучший сервис</p>
+            <!-- <h1 class="loader-title">Поглажу</h1> -->
+            <p class="loader-subtitle">С заботой о Вашем времени</p>
           </div>
         </div>
 
@@ -73,7 +73,7 @@
               />
             </div>
             <div class="logo-text">
-              <p class="logo-subtitle">Профессиональная глажка</p>
+              <p class="logo-subtitle">С заботой о Вашем времени</p>
             </div>
           </div>
 
@@ -187,7 +187,7 @@
                 <div class="stat-label">Максимальный срок</div>
               </div>
               <div class="header-stat-item">
-                <div class="stat-number">99%</div>
+                <div class="stat-number">100%</div>
                 <div class="stat-label">Качество работы</div>
               </div>
             </div>
@@ -380,7 +380,7 @@
               </div>
             </div>
 
-            <div class="service-card service-card--express">
+            <!-- <div class="service-card service-card--express">
               <div class="service-card__header">
                 <div class="service-card__icon">
                   <span class="icon-time">2</span>
@@ -408,12 +408,53 @@
                   <span class="price-label">+100% к базовой стоимости</span>
                 </div>
               </div>
+            </div> -->
+            <div class="service-card service-card--express">
+              <div class="service-card__header">
+                <div class="service-card__icon">
+                  <span class="icon-time">10</span>
+                  <span class="icon-unit">мин</span>
+                </div>
+                <div class="service-card__badge service-card__badge--express">
+                  +100%
+                </div>
+              </div>
+              <div class="service-card__content">
+                <h3 class="service-card__title">Экспресс</h3>
+                <div class="service-card__timing">
+                  <div class="timing-item timing-item--primary">
+                    <span class="timing-icon">🏪</span>
+                    <div class="timing-content">
+                      <span class="timing-label">Личное посещение:</span>
+                      <span class="timing-value timing-value--highlight"
+                        >от 10 минут</span
+                      >
+                    </div>
+                  </div>
+                  <div class="timing-item timing-item--secondary">
+                    <span class="timing-icon">🚚</span>
+                    <div class="timing-content">
+                      <span class="timing-label">Заказ через сайт:</span>
+                      <span class="timing-value">до 50 минут</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-card__limits">
+                  <div class="limit-item">
+                    <span class="limit-icon">⚖️</span>
+                    <span class="limit-text">до 5 кг</span>
+                  </div>
+                </div>
+                <div class="service-card__price">
+                  <span class="price-label">+100% к базовой стоимости</span>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="service-modes__footer">
             <p class="service-modes__note">
-              * Все режимы работают с 7:00 до 21:00. Окончательная стоимость
+              * Все режимы работают с 8:00 до 21:00. Окончательная стоимость
               рассчитывается после взвешивания
             </p>
           </div>
@@ -457,19 +498,29 @@
                 </button>
               </div>
             </div> -->
-            <!-- Фирменный мешок вместо промокода -->
-            <div class="promo-card promo-card--gift">
+            <!-- Промокод для новых клиентов -->
+
+            <div class="promo-card promo-card--discount">
               <div class="promo-card__icon">
-                <img src="img/shopping.png" alt="" class="bag-icon" />
+                <div class="gift-icon">
+                  <div class="gift-box"></div>
+
+                  <div class="gift-ribbon"></div>
+                </div>
               </div>
+
               <div class="promo-card__content">
-                <h3 class="promo-card__title">Фирменный мешок</h3>
+                <h3 class="promo-card__title">Промокод 500 рублей</h3>
+
                 <p class="promo-card__description">
-                  для грязного и чистого белья<br />
-                  с логотипом компании
+                  на скидку для новых<br />
+
+                  клиентов
                 </p>
+
                 <button class="promo-btn promo-btn--primary">
                   <span class="promo-btn__text">Получить</span>
+
                   <span class="promo-btn__arrow">→</span>
                 </button>
               </div>
@@ -713,13 +764,17 @@
                     checked
                   />
                   <!-- <span class="mode-option__icon">📝</span> -->
-                   <img src="img/sticky-note.png" alt="" class="mode-option__icon">
+                  <img
+                    src="img/sticky-note.png"
+                    alt=""
+                    class="mode-option__icon"
+                  />
                   <span class="mode-option__text">Сам укажу список вещей</span>
                 </label>
                 <label class="mode-option" data-mode="bulk">
                   <input type="radio" name="calculatorMode" value="bulk" />
                   <!-- <span class="mode-option__icon">⚖️</span> -->
-                   <img class="mode-option__icon" src="img/market.png" alt="">
+                  <img class="mode-option__icon" src="img/market.png" alt="" />
                   <span class="mode-option__text">У меня мешок вещей</span>
                 </label>
               </div>
@@ -880,6 +935,8 @@
                   </div>
                 </div>
               </div>
+
+              
             </div>
 
             <!-- Упрощенный режим "Мешок вещей" -->
@@ -910,39 +967,56 @@
                     </div>
 
                     <div class="tariff-display">
-  <label class="form-label">Применяемый тариф</label>
-  <div class="tariff-options">
-    <div class="tariff-option tariff-option--info" data-tariff="single">
-      <div class="tariff-option__content">
-        <div class="tariff-option__name">Неделька для одного</div>
-        <div class="tariff-option__price">1650.00 ₽/кг</div>
-        <div class="tariff-option__range">1-5 кг</div>
-      </div>
-    </div>
-    
-    <div class="tariff-option tariff-option--info" data-tariff="couple">
-      <div class="tariff-option__content">
-        <div class="tariff-option__name">Неделька для двоих</div>
-        <div class="tariff-option__price">1350 ₽/кг</div>
-        <div class="tariff-option__range">6-24 кг</div>
-      </div>
-    </div>
-    
-    <div class="tariff-option tariff-option--info" data-tariff="family">
-      <div class="tariff-option__content">
-        <div class="tariff-option__name">Неделька на всю семью</div>
-        <div class="tariff-option__price">1100 ₽/кг</div>
-        <div class="tariff-option__range">25+ кг</div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="tariff-note">
-    <span class="note-icon">ℹ️</span>
-    <span class="note-text">Тариф выбирается автоматически в зависимости от веса</span>
-  </div>
-</div>
+                      <label class="form-label">Применяемый тариф</label>
+                      <div class="tariff-options">
+                        <div
+                          class="tariff-option tariff-option--info"
+                          data-tariff="single"
+                        >
+                          <div class="tariff-option__content">
+                            <div class="tariff-option__name">
+                              Неделька для одного
+                            </div>
+                            <div class="tariff-option__price">1650.00 ₽/кг</div>
+                            <div class="tariff-option__range">1-5 кг</div>
+                          </div>
+                        </div>
 
+                        <div
+                          class="tariff-option tariff-option--info"
+                          data-tariff="couple"
+                        >
+                          <div class="tariff-option__content">
+                            <div class="tariff-option__name">
+                              Неделька для двоих
+                            </div>
+                            <div class="tariff-option__price">1350 ₽/кг</div>
+                            <div class="tariff-option__range">6-24 кг</div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="tariff-option tariff-option--info"
+                          data-tariff="family"
+                        >
+                          <div class="tariff-option__content">
+                            <div class="tariff-option__name">
+                              Неделька на всю семью
+                            </div>
+                            <div class="tariff-option__price">1100 ₽/кг</div>
+                            <div class="tariff-option__range">25+ кг</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="tariff-note">
+                        <span class="note-icon">ℹ️</span>
+                        <span class="note-text"
+                          >Тариф выбирается автоматически в зависимости от
+                          веса</span
+                        >
+                      </div>
+                    </div>
 
                     <div class="bulk-urgency">
                       <label class="form-label">Срочность выполнения</label>
@@ -1340,7 +1414,7 @@
                     />
                   </div>
 
-                  <p class="footer-logo-subtitle">Профессиональная глажка</p>
+                  <p class="footer-logo-subtitle">С заботой о Вашем времени</p>
                 </div>
               </div>
               <p class="footer__description">

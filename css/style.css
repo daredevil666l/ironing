@@ -101,7 +101,6 @@ body.menu-open {
   display: flex;
   flex-direction: column; /* Изменено: элементы располагаются вертикально */
   align-items: center; /* Изменено: центрирование по горизонтали */
-  gap: 8px; /* Уменьшен gap между логотипом и текстом */
   flex-shrink: 0;
   min-width: auto; /* Убираем фиксированную ширину */
   z-index: 1001;
@@ -4813,10 +4812,10 @@ html {
   background: linear-gradient(
     135deg,
     #ffffff 0%,
-    #f0f8ff 25%,
-    #e6f3ff 50%,
-    #ddefff 75%,
-    #c9e4ff 100%
+    #fffdf0 25%,
+    #ffffe6 50%,
+    #f9ffdd 75%,
+    #fffec9 100%
   );
   position: relative;
   animation: gradientShift 4s ease-in-out infinite;
@@ -6638,3 +6637,53 @@ html {
     font-size: 11px;
   }
 }
+
+
+.timing-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.timing-item--primary {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.timing-item--secondary {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.timing-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.timing-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.timing-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.timing-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.timing-value--highlight {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+

@@ -4341,7 +4341,7 @@ body.menu-open {
 
   .faq__sidebar {
     position: static;
-    order: -1;
+    order: 1;
   }
 
   .contact-methods {
